@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import ChapterList from './components/ChapterList';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/App.css';
 
 function App() {
+  const [chapters, setChapters] = useState([]);
+
+  useEffect(() => {
+    fetch('/chapters.json')
+      .then(response => response.json())
+      .then(data => setChapters(data));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container mt-5">
+      <h1 className="text-center mb-4">QUADRA</h1>
+      <ChapterList chapters={chapters} />
     </div>
   );
 }

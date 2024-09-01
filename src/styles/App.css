@@ -1,0 +1,33 @@
+/* Apply background color and font styling to the entire body */
+body {
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background */
+  font-family: Arial, sans-serif; /* Font family */
+  margin: 0;
+  padding: 0;
+  color: #333; /* Text color */
+}
+
+/* Style the container */
+.container {
+  background-color: #ffffff; /* White background for the container */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside the container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Style the heading */
+.text-center {
+  text-align: center;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem; /* Margin bottom */
+}
+
+h1 {
+  background-color: #282c34; /* Dark background for the heading */
+  color: #61dafb; /* Light blue text color */
+  padding: 10px; /* Padding around text */
+  border-radius: 4px; /* Rounded corners for the heading */
+  display: inline-block; /* Shrink-to-fit */
+}
