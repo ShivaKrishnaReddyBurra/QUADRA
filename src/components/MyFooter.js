@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-
+import { SocialIcon } from 'react-social-icons'
+import '../styles/MyFooter.css';
 function MyFooter() {
   const [showFooter, setShowFooter] = useState(false);
 
@@ -28,12 +29,20 @@ function MyFooter() {
 
   return (
     <footer
-      className={`footer bg-dark text-white text-center p-2 ${
-        showFooter ? "show" : "hide"
-      }`}
-    >
-      &copy; 2024 Quadra Blog. All Rights Reserved.
-    </footer>
+  className={`footer bg-dark text-white p-2 d-flex flex-column flex-md-row justify-content-between align-items-center ${showFooter ? "show" : "hide"}`}
+>
+  <div className="social-icons d-flex mb-2 mb-md-0"> {/* Margin bottom on small screens */}
+    <SocialIcon url="https://www.linkedin.com/in/shivakrishnareddyburra/" bgColor="transparent" className="mx-2" />
+    <SocialIcon url="https://github.com/ShivaKrishnaReddyBurra" bgColor="transparent" className="mx-2" />
+    <SocialIcon url="https://www.facebook.com/shivakrishnareddy.burra/" bgColor="transparent" className="mx-2" />
+    <SocialIcon url="https://www.instagram.com/shivkrish_1624/" bgColor="transparent" className="mx-2" />
+  </div>
+  <div className="copyright" style={{ fontSize: '0.8rem' }}>
+    &copy; 2024 Quadra Blog. All Rights Reserved.
+  </div>
+</footer>
+
+  
   );
 }
 

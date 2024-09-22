@@ -1,0 +1,17 @@
+.footer {
+  padding: 1rem; /* General padding */
+}
+
+@media (max-width: 576px) {
+  .footer {
+    text-align: center; /* Center text on small screens */
+  }
+
+  .social-icons {
+    justify-content: center; /* Center icons on small screens */
+  }
+
+  .copyright {
+    font-size: 0.7rem; /* Smaller font size for mobile */
+  }
+}
