@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.css';
 import MyNavbar from './components/MyNavbar';
 import MyFooter from './components/MyFooter';
+import CharacterGallery from './components/CharacterGallery';
 function App() {
   const [chapters, setChapters] = useState([]);
 
@@ -20,6 +21,7 @@ function App() {
         <h1 className="text-center mb-4">QUADRA</h1>
         <ChapterList chapters={chapters} />
       </div>
+      <CharacterGallery />
       <MyFooter />
     </div>
   );

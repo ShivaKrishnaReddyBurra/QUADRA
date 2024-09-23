@@ -37,8 +37,8 @@ function MyFooter() {
     <SocialIcon url="https://www.facebook.com/shivakrishnareddy.burra/" bgColor="transparent" className="mx-2" />
     <SocialIcon url="https://www.instagram.com/shivkrish_1624/" bgColor="transparent" className="mx-2" />
   </div>
-  <div className="copyright" style={{ fontSize: '0.8rem' }}>
-    &copy; 2024 Quadra Blog. All Rights Reserved.
+  <div className="copyright" style={{ fontSize: '0.9rem' }}>
+    &copy; 2024 Sk Blog. All Rights Reserved.
   </div>
 </footer>
 
