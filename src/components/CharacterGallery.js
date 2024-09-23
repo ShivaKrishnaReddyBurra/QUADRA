@@ -1,35 +1,37 @@
 import CustomImage from "./CustomIamge";
 import { motion } from "framer-motion";
-import '../styles/CharacterGallery.css';
-
+import '../styles/CharacterGallery.css'; // CSS file for additional styling
+import Kozo from '../images/kozo.png';
+import Shiron from '../images/shiron.png';
+import Nichuki from '../images/nichuki.png';
 
 export default function CharacterGallery() {
   const characters = [
     {
-      src: "https://drive.google.com/file/d/1LMiaNX1M42KNBWeHw6W7ZT_G9Buz199_/view?usp=drive_link",
+      src: Kozo,
       alt: "Kozo Zentos",
       name: "Kozo Zentos",
     },
     {
-      src: "https://drive.google.com/file/d/19ET1uCj7MoO9pET2W3bhWe4rmZb-08Ny/view?usp=drive_link",
+      src: Shiron,
       alt: "Shiron",
       name: "Shiron",
     },
     {
-      src: "https://drive.google.com/file/d/1JJUZvFBCDKPU8jx2qM_OfgWZC8LYs2Va/view?usp=drive_link",
+      src: Nichuki,
       alt: "Nichuki",
       name: "Nichuki",
     },
   ];
 
   return (
-    <div className=" my-5">
+    <div className="container my-5 gallery-container">
       <h2 className="text-center mb-4 display-4 text-white">Meet the Characters</h2>
-      <div className="row">
+      <div className="row justify-content-center">
         {characters.map((character, index) => (
           <motion.div
             key={index}
-            className={`col-md-4 d-flex justify-content-center ${index % 2 === 0 ? 'mt-md-5' : ''}`}
+            className={`col-12 col-sm-6 col-md-4 d-flex justify-content-center mb-5`}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -52,4 +54,3 @@ export default function CharacterGallery() {
     </div>
   );
 }
-
