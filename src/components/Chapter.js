@@ -38,7 +38,7 @@ const Chapter = ({ chapter }) => {
                 <p className="text-gray-500 italic text-sm">...</p>
               )}
             </div>
-            <Link href={`/chapters/${chapter._id}`}>
+            <Link href={`/chapters/${chapter.id}`}>
               <div className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium 
                              text-white bg-gray-900 rounded-lg hover:bg-gray-800 
                              transition-colors duration-200 cursor-pointer">

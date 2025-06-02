@@ -19,19 +19,21 @@ const auth = (req, res, next) => {
 };
 
 // Get all chapters (public)
+// In chapters.js, modify a route like this:
 router.get('/', async (req, res) => {
   try {
     const chapters = await Chapter.find().sort({ createdAt: -1 });
     res.json(chapters);
   } catch (error) {
-    res.status(500).json({ message: 'Server error' });
+    console.error('Error fetching chapters:', error); // Log the error
+    res.status(500).json({ message: 'Server error', error: error.message });
   }
 });
 
 // Get single chapter (public)
 router.get('/:id', async (req, res) => {
   try {
-    const chapter = await Chapter.findById(req.params.id);
+    const chapter = await Chapter.findOne({ id: Number(req.params.id) }); // Convert to number
     if (!chapter) return res.status(404).json({ message: 'Chapter not found' });
     res.json(chapter);
   } catch (error) {
@@ -46,6 +48,33 @@ router.post('/', auth, async (req, res) => {
     const chapter = new Chapter({ title, content });
     await chapter.save();
     res.status(201).json(chapter);
+  } catch (error) {
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+// Update chapter (admin only)
+router.put('/:id', auth, async (req, res) => {
+  const { title, content } = req.body;
+  try {
+    const chapter = await Chapter.findOneAndUpdate(
+      { id: Number(req.params.id) }, // Convert to number
+      { title, content },
+      { new: true }
+    );
+    if (!chapter) return res.status(404).json({ message: 'Chapter not found' });
+    res.json(chapter);
+  } catch (error) {
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+// Delete chapter (admin only)
+router.delete('/:id', auth, async (req, res) => {
+  try {
+    const chapter = await Chapter.findOneAndDelete({ id: Number(req.params.id) }); // Convert to number
+    if (!chapter) return res.status(404).json({ message: 'Chapter not found' });
+    res.json({ message: 'Chapter deleted successfully' });
   } catch (error) {
     res.status(500).json({ message: 'Server error' });
   }

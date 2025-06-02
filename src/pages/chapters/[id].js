@@ -12,7 +12,7 @@ export default function ChapterPage() {
 
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:5000/api/chapters/${id}`)
+      fetch(`/api/chapters/${id}`)
         .then(res => res.json())
         .then(data => {
           setChapter(data);
