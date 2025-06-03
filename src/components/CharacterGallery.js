@@ -24,19 +24,19 @@ export default function CharacterGallery() {
   ];
 
   return (
-    <div className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+    <div className="py-12 sm:py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
             Meet the Characters
           </h2>
-          <div className="w-16 h-px bg-gray-300 mx-auto mb-6"></div>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <div className="w-12 sm:w-16 h-px bg-gray-300 mx-auto mb-4 sm:mb-6"></div>
+          <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto px-4">
             The compelling individuals who drive our narrative forward
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {characters.map((character, index) => (
             <div key={index} className="group">
               <div className="bg-white border border-gray-200 rounded-lg overflow-hidden 
@@ -53,12 +53,12 @@ export default function CharacterGallery() {
                 </div>
                 
                 {/* Character Info */}
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <div className="p-4 sm:p-6 text-center">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
                     {character.name}
                   </h3>
                   
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
                     {character.description}
                   </p>
                 </div>

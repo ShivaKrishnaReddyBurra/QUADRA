@@ -24,11 +24,11 @@ html {
 }
 
 body {
-  font-family: 'Inter', 'Georgia', 'Times New Roman', serif;
-  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.7;
+  line-height: 1.6;
+  background-color: #fafafa;
 }
 
 /* Text selection */
@@ -67,16 +67,16 @@ textarea:focus {
 
 /* Professional button styles */
 .btn-primary {
-  @apply px-6 py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-all duration-200;
+  @apply px-4 py-2.5 sm:px-6 sm:py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-all duration-200 text-sm sm:text-base;
 }
 
 .btn-secondary {
-  @apply px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-all duration-200;
+  @apply px-4 py-2.5 sm:px-6 sm:py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-all duration-200 text-sm sm:text-base;
 }
 
 /* Professional card styles */
 .card {
-  @apply bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200;
+  @apply bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 p-4 sm:p-6;
 }
 
 /* Typography improvements */
@@ -106,24 +106,148 @@ textarea:focus {
   animation: fadeIn 0.5s ease-out;
 }
 
-/* Reading experience improvements */
+/* Enhanced reading experience */
 .reading-content {
-  font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: 1.125rem;
-  line-height: 1.8;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.6;
   color: #374151;
 }
 
-.reading-content p {
-  margin-bottom: 1.5rem;
+@media (min-width: 640px) {
+  .reading-content {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
 }
 
-.reading-content p:first-child::first-letter {
-  float: left;
-  font-size: 4rem;
-  line-height: 3.5rem;
-  padding-right: 0.5rem;
-  margin-top: 0.25rem;
-  font-weight: bold;
-  color: #1f2937;
+@media (min-width: 768px) {
+  .reading-content {
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+}
+
+.reading-content p {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .reading-content p {
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .reading-content p {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Container responsive padding */
+.container-responsive {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+/* Responsive text sizes */
+.text-responsive-sm {
+  @apply text-sm sm:text-base;
+}
+
+.text-responsive-base {
+  @apply text-base sm:text-lg;
+}
+
+.text-responsive-lg {
+  @apply text-lg sm:text-xl;
+}
+
+.text-responsive-xl {
+  @apply text-xl sm:text-2xl;
+}
+
+.text-responsive-2xl {
+  @apply text-2xl sm:text-3xl;
+}
+
+.text-responsive-3xl {
+  @apply text-3xl sm:text-4xl lg:text-5xl;
+}
+
+/* Mobile-first spacing */
+.space-y-responsive {
+  @apply space-y-4 sm:space-y-6;
+}
+
+.mb-responsive {
+  @apply mb-6 sm:mb-8 lg:mb-12;
+}
+
+.py-responsive {
+  @apply py-8 sm:py-12 lg:py-16;
+}
+
+/* Prevent footer overlap - CRITICAL FIX */
+/* .main-content {
+  min-height: calc(100vh - 4rem);
+  padding-bottom: 6rem;
+} */
+
+/* @media (min-width: 640px) {
+  .main-content {
+    padding-bottom: 5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    padding-bottom: 4rem;
+  }
+} */
+
+/* Chapter page specific spacing */
+.chapter-content {
+  min-height: calc(100vh - 4rem);
+  padding-bottom: 8rem;
+}
+
+@media (min-width: 640px) {
+  .chapter-content {
+    padding-bottom: 6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .chapter-content {
+    padding-bottom: 5rem;
+  }
+}
+
+/* Enhanced mobile responsiveness */
+@media (max-width: 640px) {
+  /* Smaller margins on mobile */
+  .prose p {
+    margin-bottom: 0.875rem;
+  }
+  
+  /* Compact cards on mobile */
+  .card {
+    @apply p-3;
+  }
+  
+  /* Tighter button spacing */
+  .btn-primary,
+  .btn-secondary {
+    @apply px-3 py-2 text-sm;
+  }
+}
+
+/* Improved focus states for mobile */
+@media (hover: none) and (pointer: coarse) {
+  button:focus,
+  input:focus,
+  textarea:focus {
+    outline: 3px solid #6b7280;
+    outline-offset: 2px;
+  }
 }

@@ -30,6 +30,7 @@ export default function AdminChapters() {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await res.json();
+      console.log('Fetched chapters:', data); // Log fetched chapters
       if (res.ok) {
         setChapters(data);
       } else {
@@ -204,7 +205,7 @@ export default function AdminChapters() {
                 <h4 className="text-xl font-semibold text-gray-900">{chapter.title}</h4>
                 <p className="text-gray-600">Created: {new Date(chapter.createdAt).toLocaleDateString()}</p>
                 <div className="flex space-x-4 mt-4">
-                  <Link href={`/chapters/${chapter.id}`}>
+                  <Link href={`/chapters/${chapter.id}`} prefetch={false}>
                     <p className="text-amber-500 hover:text-amber-600 font-medium transition-all duration-200">
                       View Chapter
                     </p>

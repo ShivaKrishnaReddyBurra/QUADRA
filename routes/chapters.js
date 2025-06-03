@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Chapter = require('../models/Chapter');
+const path = require('path');
+const Chapter = require(path.join(__dirname, '..', 'models', 'Chapter'));
 const jwt = require('jsonwebtoken');
 
 // Middleware to verify JWT
