@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Head from 'next/head';
 import ChapterList from '../components/ChapterList';
 import MyNavbar from '../components/MyNavbar';
 import MyFooter from '../components/MyFooter';
@@ -22,6 +23,10 @@ export default function Home() {
   }, []);
 
   return (
+    <>
+    <Head>
+        <title>SK Stories</title>
+      </Head>
     <div className="min-h-screen bg-gray-50">
       <MyNavbar />
       
@@ -77,5 +82,6 @@ export default function Home() {
       <CharacterGallery />      
       <MyFooter />
     </div>
+    </>
   );
 }
