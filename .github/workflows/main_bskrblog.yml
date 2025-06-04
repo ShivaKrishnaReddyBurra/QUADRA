@@ -68,4 +68,4 @@ jobs:
           app-name: 'bskrblog'
           slot-name: 'Production'
           package: .
-          startup-command: 'npm run build && npm run start'
+          startup-command: 'npm run start'
