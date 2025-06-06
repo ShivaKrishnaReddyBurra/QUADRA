@@ -113,4 +113,4 @@ npm run dev
 ## Notes
 - **Security**: Update admin credentials in MongoDB, secure `JWT_SECRET`, and use HTTPS in production.
 - **Images**: Ensure `kozo.png`, `shiron.png`, and `nichuki.png` are in `src/public/images/`.
-- **Support**: For issues, contact via the "Contact Me" link in the navbar.
+- **Support**: For issues, contact via the "Contact Me" link in the navbar. .
