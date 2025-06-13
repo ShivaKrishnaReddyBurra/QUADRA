@@ -16,7 +16,7 @@ A dynamic web application for reading chapters of the "QUADRA" story, built with
 
 ## Folder Structure
 ```
-quadra-blog/
+SK-Blog/
 ├── .env                   # Environment variables
 ├── server.js              # Express server
 ├── models/                # Mongoose models
@@ -64,8 +64,8 @@ quadra-blog/
 
 ### 1. Clone the Project
 ```bash
-git clone https://github.com/<username>/<repo>.git
-cd quadra-blog
+git clone https://github.com/ShivaKrishnaReddyBurra/SK-Blog.git
+cd SK-Blog
 ```
 
 ### 2. Install Dependencies
