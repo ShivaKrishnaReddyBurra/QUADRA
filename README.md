@@ -113,4 +113,4 @@ docker-compose up --build
 - **Security**: Secure `JWT_SECRET_TOKEN` and use HTTPS in production. Do not expose sensitive data in the GitHub repository.
 - **MongoDB Atlas**: Configure network access in MongoDB Atlas to allow connections from your local machine (add your IP or allow `0.0.0.0/0` for testing).
 - **Images**: Ensure character images are correctly placed in `src/public/images/` to avoid broken links in the character gallery.
-- **Support**: For issues, use the "Contact Me" link in the navbar or open an issue on the GitHub repository. . . .
+- **Support**: For issues, use the "Contact Me" link in the navbar or open an issue on the GitHub repository. . . . .
